@@ -1,0 +1,77 @@
+*{
+	margin: 0;
+	padding: 0;
+	-webkit-box-sizing: border-box;
+	-moz-box-sizing: border-box;
+	box-sizing: border-box;
+}
+
+ul,ol{
+	list-style-type: none;
+	margin: 0;
+	padding: 0;
+}
+
+.container{
+	max-width: 1170px;
+	margin: 0 auto;
+}
+
+.clr::after{
+	content: "";
+	display: table;
+	clear: both;
+}
+
+/* ==== START CSS CODE ==== */
+.car_block{
+	position: relative;
+	float: right;
+	animation: car 3.2s linear;
+}
+
+.car_block::before,
+.car_block::after{
+	content: "";
+	position: absolute;
+	top: 50%;
+	background: url('../img/tyre.png');
+	width: 57px;
+	height: 57px;
+	display: inline-block;
+	animation: tyre 3.2s linear;
+}
+
+.car_block::before{
+	left: 20px;
+}
+
+.car_block::after{
+	right: 10px;
+}
+
+@keyframes car{
+	0%{
+		right: 0;
+	}
+
+	100%{
+		right: 100%;
+	}
+}
+
+@keyframes tyre{
+	0%{
+		-webkit-transform: rotate(0deg);
+		-ms-transform: rotate(0deg);
+		-o-transform: rotate(0deg);
+		transform: rotate(0deg);
+	}
+
+	100%{
+		-webkit-transform: rotate(-960deg);
+		-ms-transform: rotate(-960deg);
+		-o-transform: rotate(-960deg);
+		transform: rotate(-960deg);
+	}
+}
